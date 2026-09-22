@@ -65,3 +65,8 @@ npm run dev             # requer MongoDB e RabbitMQ
 Pipeline (GitHub Actions): testes + SonarCloud → build/push Docker → deploy no EKS.
 
 Banco **MongoDB próprio e isolado** (`k8s/mongo.yaml`) — nenhum outro serviço acessa este banco.
+
+## Documentação da API (Swagger)
+
+Com o serviço rodando, acesse: **http://localhost:3003/api-docs**
+(porta 3000 quando rodando fora do docker-compose)

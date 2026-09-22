@@ -5,10 +5,11 @@ import { connectMongo } from "./database/connection";
 import { routes } from "./routes/routes";
 import { connectRabbitMQ } from "./messaging/rabbitmq";
 import { registerConsumers } from "./messaging/consumers";
-
+import { setupSwagger } from "./swagger";
 export const app = express();
 app.use(cors());
 app.use(express.json());
+setupSwagger(app);
 app.use(routes);
 app.get("/health", (_req, res) => res.json({ status: "ok", service: "execution-service" }));
 
